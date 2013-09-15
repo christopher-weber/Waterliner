@@ -1,0 +1,69 @@
+/* 
+    Document   : CSS
+    Created on : 06.08.2013, 23:43:00
+    Author     : Alexander Hehn
+    Description: Styles für die Sidepanels, das Hauptmenü und einen Teil der Navigation
+*/
+
+@charset "UTF-8";
+
+
+/* Hintergrund und Position der Google Maps Seite */
+div#map-canvas {
+	top: 0px ;
+	right: 0px ;
+	bottom: 0px ;
+	left: 0px ;
+	background-image: url(themes/images/ajax-loader.gif) ;
+	background-repeat: no-repeat ;
+	background-position: center ;
+}
+
+/* Bilder für Menüpunkte im Hauptmenü */
+div#Main img{
+	/* Bilder am unteren Rand ansetzen */
+	vertical-align: bottom;
+	/* Border auf 0 setzen, damit es so aussieht, als wären die fünf Grafiken eine einzige */
+    border: none;
+	/* Breite der Bilder auf 100% setzen, damit sie über die gesamte Breite des Bildschirms gestreckt werden */
+	width: 100%;
+}
+
+/* Hintergrundgrafik für Theme "b", also für Sidepanels und Hauptmenü */
+.ui-body-b {
+	/* Das Lineal aus dem Corporate Design als Hintergrund benutzen */
+	background: url(themes/images/light_honeycomb.png);
+
+}​
+
+/*.ui-icon-map {
+	background-image: url("../bilder/navigation/icon_map.png";
+}
+
+.ui-icon-qr {
+	background: url("../bilder/navigation/icon_qr.png") no-repeat rgba(0, 0, 0, 0.4);
+}
+
+.ui-icon-building {
+	background: url("../bilder/navigation/icon_building.png") no-repeat;
+	background-size: 18px 18px;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	.ui-icon-map {
+	background: url("../bilder/navigation/icon_map.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background-size: 18px 18px;
+	}
+
+	.ui-icon-qr {
+	background: url("../bilder/navigation/icon_qr.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background-size: 18px 18px;
+	}
+
+	.ui-icon-building {
+	background: url("../bilder/navigation/icon_building.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background-size: 18px 18px;
+	}
+}*/
+
