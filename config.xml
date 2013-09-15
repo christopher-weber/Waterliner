@@ -15,17 +15,17 @@
 
 	<!-- Name der App -->
     <name>
-		Mechatronik HsKA
+		Waterliner
 	</name>
 
 	<!-- Beschreibung der App -->
     <description>
-		Diese App soll den Studiengang "Mechatronik" der Hochschule Karlsruhe vorstellen.
+		Diese App soll zur Planung von Wasserförderstrecken bei den Feuerwehren dienen.
     </description>
 
 	<!-- Autoren -->
-    <author href="http://www.hs-karlsruhe.de" email="bernhard.beck@hs-karlsruhe.de">
-        Alexander Hehn, David Koscheck, Linda Saager und Christopher Weber - Studenten der Mecahtronik an der Hochschule Karlsruhe - Technik und Wirtschaft.
+    <author href="" email="chirstopher-weber@web.de">
+        Christopher Weber
     </author>
 
     <!-- Individuelle API-Genehmigungen für das Feststellen der Position und den Zugriff auf das Internet -->
