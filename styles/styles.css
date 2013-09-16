@@ -30,9 +30,9 @@ div#Main img{
 }
 
 /* Hintergrundgrafik für Theme "b", also für Sidepanels und Hauptmenü */
-.ui-body-b {
+.ui-body-a {
 	/* Das Lineal aus dem Corporate Design als Hintergrund benutzen */
-	background: url(themes/images/light_honeycomb.png);
+	background: url(themes/images/px_by_Gre3g.png);
 
 }​
 
