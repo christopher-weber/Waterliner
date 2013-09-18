@@ -4,6 +4,7 @@
 			
 			// Geräte APIs sind verfügbar
 			function onDeviceReady() {
+				$( ".start_map" ).click(
 				// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
 				$("#welcome").popup("open", {positionTo: "window"});
 				
@@ -18,6 +19,7 @@
 					no_pos_info();
 					$("#welcome").popup("close");
 				});
+				)
 			}
 
 			

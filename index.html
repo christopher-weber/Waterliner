@@ -7,8 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<title>Waterliner</title>
 
-		<!-- Einbindung des PhotoSwipe-Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="styles/photoswipe.css" />
 		<!-- Einbindung eigener Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="styles/styles.css" />
 		
@@ -17,13 +15,8 @@
 		<link rel="stylesheet" type="text/css" href="styles/jquery.mobile.structure-1.3.2.min.css" />
 
 
-		<!-- Einbindung von klass, jQuery und jQuery mobile -->
-		<script type="text/javascript" src="js/klass.min.js"></script>
-		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
-		<!-- Einbindung von PhotoSwipe -->
-		<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
-		<script type="text/javascript" src="js/photoswipe.js"></script>
+
+
 		<!-- Einbindung der Plugins für PhoneGap -->
 		<script type="text/javascript" src="phonegap.js"></script>
 
@@ -32,6 +25,10 @@
 		
 		<!-- Ermitteln der Possition und anzeigen der Google Map -->
 		<script type="text/javascript" src="js/geolocation.js"></script>
+		
+		<!-- Einbindung von klass, jQuery und jQuery mobile -->
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
 	</head>
 
 	<!-- BODY -->
@@ -57,13 +54,41 @@
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
 				<!-- Links zu den fünf Hauptmenüpunkten: Studiengang, Hochschule, Studentenleben und Spiele -->
-				<a href="#map" data-theme="a" data-role="button" data-transition="slide">Map</a>
+				<a href="#map" class"start_map" data-theme="a" data-role="button" data-transition="slide">Map</a>
 				<a href="#wasserversorgung" data-theme="a" data-role="button" data-transition="slide">Wasserversorgung</a>
 				<a href="#faustregeln" data-theme="a" data-role="button" data-transition="slide">Faustregeln</a>				
 				<a href="#schaumrechner" data-theme="a" data-role="button" data-transition="slide">Schaumrechner</a>
 				<a href="#optionen" data-theme="a" data-role="button" data-transition="slide">Optionen</a>
 			</div>
 			
+			<!-- POPUPS -->
+			<!-- POPUP: Abfrage bzgl. der Verwendung von Standortinformationen -->			
+			<div data-role="popup" id="welcome" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+				<!-- Header -->	
+				<div data-role="header" data-theme="a">
+					<h1>Achtung!</h1>
+				</div>
+				<!-- Inhalt der Seite -->	
+				<div data-role="content" data-theme="a">
+					<h3 class="ui-title">Verwendung von Standordinformationen!</h3>
+					<p>Um deinen Standort zu bestimmen, möchte diese App deine Standortinformationen verwenden. Bist du damit einverstanden?</p>
+					<a href="#" class="geook" data-role="button" data-theme="a">OK</a>
+					<a href="#" id="geofalse" data-role="button" data-theme="a">NEIN, Danke!</a>
+				</div>
+			</div>
+			
+			<!-- POPUP: Position konnte nicht ermittelt werden -->				
+			<div data-role="popup" id="nopos" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+				<!-- Header -->	
+				<div data-role="header" data-theme="a">
+					<h1>Achtung!</h1>
+				</div>
+				<!-- Inhalt der Seite -->	
+				<div data-role="content" data-theme="a">
+					<p>Dein Standort konnte nicht ermittelt werden! :-(</p>
+					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
+				</div>
+			</div>
 
 		</div>
 
