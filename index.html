@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<title>Hochschule Karlsruhe - Studiengang Mechatronik</title>
+		<title>Waterliner</title>
 
 		<!-- Einbindung des PhotoSwipe-Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="styles/photoswipe.css" />
@@ -29,53 +29,62 @@
 
 		<!-- Sidepanels ausblenden, falls iOS verwendet wird -->
 		<script type="text/javascript" src="js/sidepanel.js"></script>
+		
+		<!-- Ermitteln der Possition und anzeigen der Google Map -->
+		<script type="text/javascript" src="js/geolocation.js"></script>
 	</head>
 
 	<!-- BODY -->
 	<body>
-		<!-- Hauptmenü -->
-		<div data-role="page" data-theme="a" id="Main" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		<!-- ##### Hauptmenü ##### -->
+		<div data-role="page" data-theme="a" id="main" data-title="Waterliner">
 			<!-- Sidepanel -->
 			<div data-role="panel" data-theme="a" id="SidePanelMain" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Men&uuml;</h3>
-				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#Main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="gear"   data-transition="flip" href="#optionen">Optionen</a>
 				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
-				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
-				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
-				<a data-role="button" data-theme="a" data-icon="back" data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="delete" data-transition="slidedown" data-rel="dialog" href="#appbeenden" data-position-to="window">App Beenden</a>
 			</div>
 
 			<!-- Headerleiste -->
 			<div data-role="header" data-position="fixed">
 				<h1>Waterliner</h1>
-				<a data-role="button" data-icon="grid" data-transition="slide" class="ui-btn-right" href="#SidePanelMain">Men&uuml;</a>
+				<a data-role="button" data-icon="bars" data-transition="slide" class="ui-btn-right" href="#SidePanelMain">Men&uuml;</a>
 			</div>
 
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
 				<!-- Links zu den fünf Hauptmenüpunkten: Studiengang, Hochschule, Studentenleben und Spiele -->
-
+				<a href="#map" data-theme="a" data-role="button" data-transition="slide">Map</a>
+				<a href="#wasserversorgung" data-theme="a" data-role="button" data-transition="slide">Wasserversorgung</a>
+				<a href="#faustregeln" data-theme="a" data-role="button" data-transition="slide">Faustregeln</a>				
+				<a href="#schaumrechner" data-theme="a" data-role="button" data-transition="slide">Schaumrechner</a>
+				<a href="#optionen" data-theme="a" data-role="button" data-transition="slide">Optionen</a>
 			</div>
+			
+
 		</div>
 
 
-		<!-- Impressum -->
-		<div data-role="page" data-theme="a" id="Impressum" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		<!-- ##### Impressum #####-->
+		<div data-role="page" data-theme="a" id="Impressum" data-title="Waterliner">
 			<!-- Sidepanel -->
 			<div data-role="panel" data-theme="a" id="SidePanelImpressum" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Men&uuml;</h3>
-				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#Main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="gear"   data-transition="flip" href="#optionen">Optionen</a>
 				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
-				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
-				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
-				<a data-role="button" data-theme="a" data-icon="back" data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="delete" data-transition="slidedown" data-rel="dialog" href="#appbeenden" data-position-to="window">App Beenden</a>
 			</div>
 
 			<!-- Headerleiste -->
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-transition="slide" data-direction="reverse" href="#Main">Zur&uuml;ck</a>
 				<h1>Impressum</h1>
-				<a data-role="button" data-icon="grid" data-transition="slide" href="#SidePanelImpressum">Men&uuml;</a>
+				<a data-role="button" data-icon="bars" data-transition="slide" href="#SidePanelImpressum">Men&uuml;</a>
 			</div>
 
 			<!-- Inhalt der Seite -->
@@ -98,6 +107,7 @@
 					<br>
 				</p>
 			</div>
+			
 		</div>
 
 
@@ -105,167 +115,161 @@
 			#						Main topics						#
 		    ######################################################### -->
 
-		<!-- Studiengang -->
-		<div data-role="page" data-theme="a" id="Studiengang" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		<!--##### Map #####-->
+		<div data-role="page" data-theme="a" id="map" data-title="Waterliner">
 			<!-- Sidepanel -->
-			<div data-role="panel" data-theme="a" id="SidePanelStudiengang" data-position="right" data-position-fixed="true" data-display="overlay">
+			<div data-role="panel" data-theme="a" id="SidePanelMap" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Men&uuml;</h3>
-				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#Main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="gear"   data-transition="flip" href="#optionen">Optionen</a>
 				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
-				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
-				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
-				<a data-role="button" data-theme="a" data-icon="back" data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="delete" data-transition="slidedown" data-rel="dialog" href="#appbeenden" data-position-to="window">App Beenden</a>
 			</div>
 
 			<!-- Headerleiste -->
 			<div data-role="header" data-position="fixed">
-				<a data-role="button" data-icon="home" data-transition="slide" data-direction="reverse" href="#Main">Zur&uuml;ck</a>
-				<h1>Studiengang</h1>
-				<a data-role="button" data-icon="grid" data-transition="slide" href="#SidePanelStudiengang">Men&uuml;</a>
+				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" href="#main">Zur&uuml;ck</a>
+				<h1>Map</h1>
+				<a data-role="button" data-icon="bars" data-transition="slide" href="#SidePanelMap">Men&uuml;</a>
 			</div>
 
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
-				<!-- Links zu den Untermenüpunkten -->
-				<div data-role="controlgroup">
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" data-icon="arrow-r" href="#Mechatronik">Was ist Mechatronik?</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" data-icon="arrow-r" href="#Vor">Vor dem Studium</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" data-icon="arrow-r" href="#Mittendrin">Mittendrin</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" data-icon="arrow-r" href="#Nach">Nach dem Bachelor</a>
-				</div>
+				<!-- Container in dem per Javascript die Google Map eingefügt wird -->
+				<div id="map-canvas" style="position:absolute; width: 100%;height: 100%;"><!-- hier wird die Google Maps Karte angezeigt --></div>
 			</div>
+
 		</div>
 
 
-		<!-- Hochschule -->
-		<div data-role="page" data-theme="a" id="Hochschule" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		<!--###### Wasserversorgung #####-->
+		<div data-role="page" data-theme="a" id="wasserversorgung" data-title="Waterliner">
 			<!-- Sidepanel -->
-			<div data-role="panel" data-theme="a" id="SidePanelHochschule" data-position="right" data-position-fixed="true" data-display="overlay">
+			<div data-role="panel" data-theme="a" id="SidePanelWasserversorgung" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Men&uuml;</h3>
-				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#Main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="gear"   data-transition="flip" href="#optionen">Optionen</a>
 				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
-				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
-				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
-				<a data-role="button" data-theme="a" data-icon="back" data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="delete" data-transition="slidedown" data-rel="dialog" href="#appbeenden" data-position-to="window">App Beenden</a>
 			</div>
 
 			<!-- Headerleiste -->
 			<div data-role="header" data-position="fixed">
-				<a data-role="button" data-icon="home" data-transition="slide" data-direction="reverse" href="#Main">Zur&uuml;ck</a>
-				<h1>Hochschule</h1>
-				<a data-role="button" data-icon="grid" data-transition="slide" href="#SidePanelHochschule">Men&uuml;</a>
+				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" href="#main">Zur&uuml;ck</a>
+				<h1>Wasserversorgung</h1>
+				<a data-role="button" data-icon="bars" data-transition="slide" href="#SidePanelWasserversorgung">Men&uuml;</a>
 			</div>
 
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
-				<div data-role="controlgroup">
-					<!-- Links zu den Untermenüpunkten -->
-				<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Ranking">Ranking</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Forschung">Forschung</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Stipendien">Stipendien</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Kontakt">Kontakt</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="navigation.html" rel="external">Navigator</a>
-				</div>
+			
 			</div>
+			
+
 		</div>
-
-
-		<!-- Studentenleben -->
-		<div data-role="page" data-theme="a" id="Studentenleben" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		
+		<!--###### Faustregeln ######-->
+		<div data-role="page" data-theme="a" id="faustregeln" data-title="Waterliner">
 			<!-- Sidepanel -->
-			<div data-role="panel" data-theme="a" id="SidePanelStudentenleben" data-position="right" data-position-fixed="true" data-display="overlay">
+			<div data-role="panel" data-theme="a" id="SidePanelFaustregeln" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Men&uuml;</h3>
-				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#Main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="gear"   data-transition="flip" href="#optionen">Optionen</a>
 				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
-				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
-				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
-				<a data-role="button" data-theme="a" data-icon="back" data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="delete" data-transition="slidedown" data-rel="dialog" href="#appbeenden" data-position-to="window">App Beenden</a>
 			</div>
 
 			<!-- Headerleiste -->
 			<div data-role="header" data-position="fixed">
-				<a data-role="button" data-icon="home" data-transition="slide" data-direction="reverse" href="#Main">Zur&uuml;ck</a>
-				<h1>Studentenleben</h1>
-				<a data-role="button" data-icon="grid" data-transition="slide" href="#SidePanelStudentenleben">Men&uuml;</a>
+				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" href="#main">Zur&uuml;ck</a>
+				<h1>Faustregeln</h1>
+				<a data-role="button" data-icon="bars" data-transition="slide" href="#SidePanelFaustregeln">Men&uuml;</a>
 			</div>
 
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
-				<div data-role="controlgroup">
-					<!-- Links zu den Untermenüpunkten -->
-				<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Finanzierung">Finanzierung</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Wohnen">Wohnen</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Freizeitangebote">Freizeitangebote</a>
-				</div>
+
+			
 			</div>
+			
+
 		</div>
-
-
-		<!-- Mediathek -->
-		<div data-role="page" data-theme="a" id="Mediathek" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		
+		<!--##### Schaumrechner ######-->
+		<div data-role="page" data-theme="a" id="schaumrechner" data-title="Waterliner">
 			<!-- Sidepanel -->
-			<div data-role="panel" data-theme="a" id="SidePanelMediathek" data-position="right" data-position-fixed="true" data-display="overlay">
+			<div data-role="panel" data-theme="a" id="SidePanelSchaumrechner" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Men&uuml;</h3>
-				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#Main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="gear"   data-transition="flip" href="#optionen">Optionen</a>
 				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
-				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
-				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
-				<a data-role="button" data-theme="a" data-icon="back" data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="delete" data-transition="slidedown" data-rel="dialog" href="#appbeenden" data-position-to="window">App Beenden</a>
 			</div>
 
 			<!-- Headerleiste -->
 			<div data-role="header" data-position="fixed">
-				<a data-role="button" data-icon="home" data-transition="slide" data-direction="reverse" href="#Main">Zur&uuml;ck</a>
-				<h1>Mediathek</h1>
-				<a data-role="button" data-icon="grid" data-transition="slide" href="#SidePanelMediathek">Men&uuml;</a>
+				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" href="#main">Zur&uuml;ck</a>
+				<h1>Schaumrechner</h1>
+				<a data-role="button" data-icon="bars" data-transition="slide" href="#SidePanelSchaumrechner">Men&uuml;</a>
 			</div>
 
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
-				<!-- Links zu den Untermenüpunkten -->
-				<div data-role="controlgroup">
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Videos">Videos</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Bildergalerie">Bildergalerie</a>
-				</div>
+
+			
 			</div>
+			
 		</div>
-
-
-		<!-- Spiele -->
-		<div data-role="page" data-theme="a" id="Spiele" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		
+		<!--###### Optionen ######-->
+		<div data-role="page" data-theme="a" id="optionen" data-title="Waterliner">
 			<!-- Sidepanel -->
-			<div data-role="panel" data-theme="a" id="SidePanelSpiele" data-position="right" data-position-fixed="true" data-display="overlay">
+			<div data-role="panel" data-theme="a" id="SidePanelOptionen" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Men&uuml;</h3>
-				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#Main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="home"   data-transition="flip" href="#main">Hauptmen&uuml;</a>
+				<a data-role="button" data-theme="a" data-icon="gear"   data-transition="flip" href="#optionen">Optionen</a>
 				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
-				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
-				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
-				<a data-role="button" data-theme="a" data-icon="back" data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Men&uuml; Schlie&szlig;en</a>
+				<a data-role="button" data-theme="a" data-icon="delete" data-transition="slidedown" data-rel="dialog" href="#appbeenden" data-position-to="window">App Beenden</a>
 			</div>
 
 			<!-- Headerleiste -->
 			<div data-role="header" data-position="fixed">
-				<a data-role="button" data-icon="home" data-transition="slide" data-direction="reverse" href="#Main">Zur&uuml;ck</a>
-				<h1>Spiele</h1>
-				<a data-role="button" data-icon="grid" data-transition="slide" href="#SidePanelSpiele">Men&uuml;</a>
+				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" href="#main">Zur&uuml;ck</a>
+				<h1>Optionen</h1>
+				<a data-role="button" data-icon="bars" data-transition="slide" href="#SidePanelOptionen">Men&uuml;</a>
 			</div>
 
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
-				<!-- Links zu den Untermenüpunkten -->
-				<div data-role="controlgroup">
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Wer_wars">Wer war's?</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Bilderraten">Bilderraten</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Formelecke">Formelecke</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Assessment">Assessment</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="memory.html" rel="external">Produktememory</a>
-				</div>
+
+			
 			</div>
+
 		</div>
 
+		<!--###### App Beenden ######-->
+		<div data-role="page" data-theme="b" id="appbeenden" data-title="Waterliner">
 
-	
+			<!-- Headerleiste -->
+			<div data-role="header" data-position="fixed" data-theme="a">
+				<h1>App beenden?</h1>
+			</div>
 
+			<!-- Inhalt der Seite -->
+			<div data-role="content">
+				<p>Möchten Sie <i>Waterliner</i> wirklich schließen?</p>
+					<button data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">Ja</button>
+					<button data-theme="a" data-icon="back" data-rel="back" href="#">Nein</button>
 
+			
+			</div>
+			
+		</div>		
+		
 	</body>
 </html>
