@@ -63,7 +63,8 @@
 		
 			// Der Benutzer verneint die Nutzung seiner Standortinformationen oder die aktuelle Position konnte nicht ermittelt werden.
 			function onError(error) {
-				$("#nopos").popup("open", {positionTo: "window"});				// Popup mit Fehlermeldung wird angezeigt
+				alert("aktuelle Position konnte nicht ermittelt werden");
+				//$("#nopos").popup("open", {positionTo: "window"});				// Popup mit Fehlermeldung wird angezeigt
 				no_pos_info;													// Karte wird ohne Standortinformationen erstellt
 			}
   
