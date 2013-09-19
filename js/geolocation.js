@@ -4,22 +4,22 @@
 			
 			// Geräte APIs sind verfügbar
 			function onDeviceReady() {
-				$( ".start_map" ).click(
-				// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
-				$("#welcome").popup("open", {positionTo: "window"});
-				
-				// Benutzer erlaubt die Verwendung von Standortinformationen
-				$( ".geook" ).click(function() {
-					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:0, timeout:5000, enableHighAccuracy: true});
-					$("#welcome").popup("close");
+				$( ".start_map" ).click(function() {
+					// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
+					$("#welcome").popup("open", {positionTo: "window"});
+					
+					// Benutzer erlaubt die Verwendung von Standortinformationen
+					$( ".geook" ).click(function() {
+						navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:0, timeout:5000, enableHighAccuracy: true});
+						$("#welcome").popup("close");
+					});
+					
+					// Benutzer verneint die Verwendung von Standortinformationen				
+					$( "#geofalse" ).click(function() {
+						no_pos_info();
+						$("#welcome").popup("close");
+					});
 				});
-				
-				// Benutzer verneint die Verwendung von Standortinformationen				
-				$( "#geofalse" ).click(function() {
-					no_pos_info();
-					$("#welcome").popup("close");
-				});
-				)
 			}
 
 			

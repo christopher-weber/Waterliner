@@ -19,22 +19,6 @@ div#map-canvas {
 	background-position: center ;
 }
 
-/* Bilder für Menüpunkte im Hauptmenü */
-div#Main img{
-	/* Bilder am unteren Rand ansetzen */
-	vertical-align: bottom;
-	/* Border auf 0 setzen, damit es so aussieht, als wären die fünf Grafiken eine einzige */
-    border: none;
-	/* Breite der Bilder auf 100% setzen, damit sie über die gesamte Breite des Bildschirms gestreckt werden */
-	width: 100%;
-}
-
-/* Hintergrundgrafik für Theme "b", also für Sidepanels und Hauptmenü */
-.ui-body-a {
-	/* Das Lineal aus dem Corporate Design als Hintergrund benutzen */
-	background: url(themes/images/px_by_Gre3g.png);
-
-}​
 
 /*.ui-icon-map {
 	background-image: url("../bilder/navigation/icon_map.png";
