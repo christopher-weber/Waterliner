@@ -61,34 +61,6 @@
 				<a href="#optionen" data-theme="a" data-role="button" data-transition="slide">Optionen</a>
 			</div>
 			
-			<!-- POPUPS -->
-			<!-- POPUP: Abfrage bzgl. der Verwendung von Standortinformationen -->			
-			<div data-role="popup" id="welcome" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
-				<!-- Header -->	
-				<div data-role="header" data-theme="a">
-					<h1>Achtung!</h1>
-				</div>
-				<!-- Inhalt der Seite -->	
-				<div data-role="content" data-theme="a">
-					<h3 class="ui-title">Verwendung von Standordinformationen!</h3>
-					<p>Um deinen Standort zu bestimmen, möchte diese App deine Standortinformationen verwenden. Bist du damit einverstanden?</p>
-					<a href="#" class="geook" data-role="button" data-theme="a">OK</a>
-					<a href="#" id="geofalse" data-role="button" data-theme="a">NEIN, Danke!</a>
-				</div>
-			</div>
-			
-			<!-- POPUP: Position konnte nicht ermittelt werden -->				
-			<div data-role="popup" id="nopos" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
-				<!-- Header -->	
-				<div data-role="header" data-theme="a">
-					<h1>Achtung!</h1>
-				</div>
-				<!-- Inhalt der Seite -->	
-				<div data-role="content" data-theme="a">
-					<p>Dein Standort konnte nicht ermittelt werden! :-(</p>
-					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
-				</div>
-			</div>
 
 		</div>
 
@@ -167,6 +139,35 @@
 			
 			<div data-role="footer"  data-position="fixed">
 				<a data-role="button" data-theme="a" data-icon="info" data-transition="pop" data-rel="dialog" href="#koordinaten" data-position-to="window">Koordinaten</a>
+			</div>
+			
+			<!-- POPUPS -->
+			<!-- POPUP: Abfrage bzgl. der Verwendung von Standortinformationen -->			
+			<div data-role="popup" id="welcome" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+				<!-- Header -->	
+				<div data-role="header" data-theme="a">
+					<h1>Achtung!</h1>
+				</div>
+				<!-- Inhalt der Seite -->	
+				<div data-role="content" data-theme="a">
+					<h3 class="ui-title">Verwendung von Standordinformationen!</h3>
+					<p>Um deinen Standort zu bestimmen, möchte diese App deine Standortinformationen verwenden. Bist du damit einverstanden?</p>
+					<a href="#" class="geook" data-role="button" data-theme="a">OK</a>
+					<a href="#" id="geofalse" data-role="button" data-theme="a">NEIN, Danke!</a>
+				</div>
+			</div>
+			
+			<!-- POPUP: Position konnte nicht ermittelt werden -->				
+			<div data-role="popup" id="nopos" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+				<!-- Header -->	
+				<div data-role="header" data-theme="a">
+					<h1>Achtung!</h1>
+				</div>
+				<!-- Inhalt der Seite -->	
+				<div data-role="content" data-theme="a">
+					<p>Dein Standort konnte nicht ermittelt werden! :-(</p>
+					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
+				</div>
 			</div>
 
 		</div>
@@ -307,7 +308,7 @@
 
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
-				
+				<div id="geolocation">Finding geolocation...</div>
 			</div>
 			
 		</div>			

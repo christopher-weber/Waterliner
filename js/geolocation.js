@@ -4,7 +4,9 @@
 			
 			// Geräte APIs sind verfügbar
 			function onDeviceReady() {
+				alert("Device Ready");
 				$( ".start_map" ).click(function() {
+					alert("Klick erkannt");
 					// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
 					$("#welcome").popup("open", {positionTo: "window"});
 					
@@ -25,6 +27,7 @@
 			
 			// Die aktuelle Position konnte mittels Phonegap Geolocation ermittelt werden
 			function onSuccess(position) {
+				alert("getPosition success");
 				// Die ermittelten Standortinformationen werden auf Seite 2 des Navigators angezeigt, wenn der "div"-Container mit der ID "geolocation" nicht auskommentiert ist.
 				$('#geolocation').html('Latitude: '           + position.coords.latitude              + '<br />' +
 									'Longitude: '          + position.coords.longitude             + '<br />' +
