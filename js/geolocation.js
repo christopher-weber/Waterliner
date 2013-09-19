@@ -1,3 +1,4 @@
+
 			// Warten bis die Geräte API Libraries geladen sind
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
@@ -8,19 +9,19 @@
 				$( ".start_map" ).click(function() {
 					alert("Klick erkannt");
 					// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
-					$("#welcome").popup("open", {positionTo: "window"});
+					//$("#welcome").popup("open", {positionTo: "window"});
 					
 					// Benutzer erlaubt die Verwendung von Standortinformationen
-					$( ".geook" ).click(function() {
+					//$( ".geook" ).click(function() {
 						navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:0, timeout:5000, enableHighAccuracy: true});
-						$("#welcome").popup("close");
-					});
+						//$("#welcome").popup("close");
+					//});
 					
 					// Benutzer verneint die Verwendung von Standortinformationen				
-					$( "#geofalse" ).click(function() {
-						no_pos_info();
-						$("#welcome").popup("close");
-					});
+					//$( "#geofalse" ).click(function() {
+					//	no_pos_info();
+					//	$("#welcome").popup("close");
+					//});
 				});
 			}
 
