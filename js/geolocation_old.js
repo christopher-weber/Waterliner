@@ -1,73 +1,36 @@
-// Warten bis die Geräte API Libraries geladen sind
-document.addEventListener("deviceready", onDeviceReady, false);
+
+			// Warten bis die Geräte API Libraries geladen sind
+			document.addEventListener("deviceready", onDeviceReady, false);
 			
 			
-// Geräte APIs sind verfügbar
-function onDeviceReady() {
-	var track_id = '';      // Name/ID of the exercise
-	var watch_id = null;    // ID of the geolocation
-	var tracking_data = []; // Array containing GPS position objects
-	alert("Device Ready");
-	$( ".start_map" ).click(function() {
-		// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
-		//$("#welcome").popup("open", {positionTo: "window"});
-		
-		// Benutzer erlaubt die Verwendung von Standortinformationen
-		//$( ".geook" ).click(function() {
-			navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:0, timeout:5000, enableHighAccuracy: true});
-			//$("#welcome").popup("close");
-		//});
-		
-		// Benutzer verneint die Verwendung von Standortinformationen				
-		//$( "#geofalse" ).click(function() {
-		//	no_pos_info();
-		//	$("#welcome").popup("close");
-		//});
-	});
-}
-			
-			
-			
-	
-$( ".start_tracking" ).click(function() {
-	alert("Start Tracking...");
-	// Start tracking the User
-    watch_id = navigator.geolocation.watchPosition(
-    
-    	// Success
-        function(position){
-			alert("watchGeolocation succeed! :)");
-            tracking_data.push(position);
-			$('#watchposition').html('Latitude: '           + position.coords.latitude              + '<br />' +
-					'Longitude: '          + position.coords.longitude             + '<br />' +
-					'Altitude: '           + position.coords.altitude              + '<br />' +
-					'Accuracy: '           + position.coords.accuracy              + '<br />' +
-					'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-					'Heading: '            + position.coords.heading               + '<br />' +
-					'Speed: '              + position.coords.speed                 + '<br />' +
-					'Timestamp: '          + position.timestamp                    + '<br />');
-        },
-        
-        // Error
-        function(error){
-            console.log(error);
-        },
-        
-        // Settings
-        { frequency: 3000, enableHighAccuracy: true });
-    
-});
-			
-			
-			
-			
+			// Geräte APIs sind verfügbar
+			function onDeviceReady() {
+				alert("Device Ready");
+				$( ".start_map" ).click(function() {
+					alert("Klick erkannt");
+					// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
+					//$("#welcome").popup("open", {positionTo: "window"});
+					
+					// Benutzer erlaubt die Verwendung von Standortinformationen
+					//$( ".geook" ).click(function() {
+						navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:0, timeout:5000, enableHighAccuracy: true});
+						//$("#welcome").popup("close");
+					//});
+					
+					// Benutzer verneint die Verwendung von Standortinformationen				
+					//$( "#geofalse" ).click(function() {
+					//	no_pos_info();
+					//	$("#welcome").popup("close");
+					//});
+				});
+			}
 
 			
 			// Die aktuelle Position konnte mittels Phonegap Geolocation ermittelt werden
 			function onSuccess(position) {
 				alert("getPosition success");
 				// Die ermittelten Standortinformationen werden auf Seite 2 des Navigators angezeigt, wenn der "div"-Container mit der ID "geolocation" nicht auskommentiert ist.
-				$('#getposition').html('Latitude: '           + position.coords.latitude              + '<br />' +
+				$('#geolocation').html('Latitude: '           + position.coords.latitude              + '<br />' +
 									'Longitude: '          + position.coords.longitude             + '<br />' +
 									'Altitude: '           + position.coords.altitude              + '<br />' +
 									'Accuracy: '           + position.coords.accuracy              + '<br />' +
@@ -141,3 +104,21 @@ $( ".start_tracking" ).click(function() {
 					icon: 'bilder/navigation/position.png'
 				});
 			}
+			
+			
+  			// Pins die besondere Gebäude oder Plätze kennzeichnen werden auf die Karte gesetzt
+			function set_markers(map){
+				// Auslesen der JSON-Datei und Zeichnen von Google-Maps-Markern für jeden einzelne Zeile der JSON-Datei
+				$.getJSON('daten/places.json', function(json) {
+					$.each(json, function(name,data) {
+						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
+						// Einen Marker erstellen und ihn auf der KArte positionierten
+						var marker = new google.maps.Marker({
+							position: latLng,
+							map: map,
+							title: data.name,
+							icon: 'bilder/navigation/' + name + '.png'
+						});
+					});
+				});
+			}	
