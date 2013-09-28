@@ -8,6 +8,8 @@ function onDeviceReady() {
 	var watch_id = null;    // ID of the geolocation
 	var tracking_data = []; // Array containing GPS position objects
 	alert("Device Ready");
+	
+	// Klick auf MAP-Button
 	$( ".start_map" ).click(function() {
 		// Als erstes wird das Popup "welcome" gestartet. Dabei wird der Benutzer um das Einverständnis zur Verwendung von Standortinformationen gefragt.
 		//$("#welcome").popup("open", {positionTo: "window"});
@@ -24,8 +26,9 @@ function onDeviceReady() {
 		//	$("#welcome").popup("close");
 		//});
 	});
-	alert("Map accomplished!");	
 	
+	
+	// Klick auf START-Button
 	$( ".start_tracking" ).click(function() {
 	alert("Start Tracking...");
 	// Start tracking the User
@@ -53,6 +56,14 @@ function onDeviceReady() {
         // Settings
         { frequency: 3000, enableHighAccuracy: true });
     
+	});	
+	
+	// Klick auf STOP-Button
+	$( ".stop_tracking" ).click(function() {
+	alert("Stop Tracking...");
+	// Stop tracking the user
+	navigator.geolocation.clearWatch(watch_id);
+	alert("Tracking stopped!");
 	});	
 }
 
@@ -90,6 +101,7 @@ function onSuccess(position) {
 	create_map(mapOptions);// Google-Maps Karte wird erstellt
 	set_position(Latlng_position, map);	// Der Pin der den aktuellen Standort des Nutzers anzeigt wird auf die Karte gesetzt
 	set_markers(map);	// Pins die besondere Gebäude oder Plätze kennzeichnen werden auf die Karte gesetzt
+	alert("Map accomplished!");	
 }
 
 		
