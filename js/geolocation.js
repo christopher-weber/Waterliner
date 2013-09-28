@@ -45,6 +45,14 @@ function onDeviceReady() {
 				'Heading: '            + position.coords.heading               + '<br />' +
 				'Speed: '              + position.coords.speed                 + '<br />' +
 				'Timestamp: '          + position.timestamp                    + '<br />');
+			
+			meineLongitude = position.coords.longitude;
+			meineLatitude = position.coords.latitude;
+			var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Positions-Koordinaten in Koordinaten-Variable von Google Maps
+			
+			// Update Marker in Map
+			set_position(Latlng_position, map);	// Der Pin der den aktuellen Standort des Nutzers anzeigt wird auf die Karte gesetzt
+			
         },
         
         // Error
@@ -83,6 +91,8 @@ function onSuccess(position) {
 		'Timestamp: '          + position.timestamp                    + '<br />');
 	
 	
+	
+	
 	meineLongitude = position.coords.longitude;
 	meineLatitude = position.coords.latitude;
 	var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Positions-Koordinaten in Koordinaten-Variable von Google Maps
@@ -100,7 +110,6 @@ function onSuccess(position) {
 
 	create_map(mapOptions);// Google-Maps Karte wird erstellt
 	set_position(Latlng_position, map);	// Der Pin der den aktuellen Standort des Nutzers anzeigt wird auf die Karte gesetzt
-	set_markers(map);	// Pins die besondere Gebäude oder Plätze kennzeichnen werden auf die Karte gesetzt
 	alert("Map accomplished!");	
 }
 
