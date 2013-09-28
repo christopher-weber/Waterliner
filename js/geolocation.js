@@ -63,7 +63,7 @@ function onDeviceReady() {
         },
         
         // Settings
-        { frequency: 3000, enableHighAccuracy: true });
+        { frequency: 6000, enableHighAccuracy: true });
     
 	});	
 	
