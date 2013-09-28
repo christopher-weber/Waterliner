@@ -35,7 +35,7 @@ function onDeviceReady() {
     watch_id = navigator.geolocation.watchPosition(
     	// Success
         function(position){
-			alert("watchGeolocation succeed!");
+			//alert("watchGeolocation succeed!");
             tracking_data.push(position);
 			$('#watchposition').html('Latitude: '           + position.coords.latitude              + '<br />' +
 				'Longitude: '          + position.coords.longitude             + '<br />' +
