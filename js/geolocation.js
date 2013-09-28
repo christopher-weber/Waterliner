@@ -151,7 +151,7 @@ function onSuccess(position) {
 	// Der Pin der den aktuellen Standort des Nutzers anzeigt wird auf die Karte gesetzt
 	function set_position(myPosition, map){
 		// Marker für aktuellen Standort einfügen
-		var marker = new google.maps.Marker({
+		marker = new google.maps.Marker({
 			position: myPosition,
 			map: map,
 			title: 'Mein Standort',
