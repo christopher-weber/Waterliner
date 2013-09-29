@@ -51,7 +51,8 @@ function onDeviceReady() {
 			var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Positions-Koordinaten in Koordinaten-Variable von Google Maps
 			
 			// Update Marker in Map
-			marker.setPosition(Latlng_position)
+			marker.setPosition(Latlng_position);
+			map.setCenter(Latlng_position);
 			//set_position(Latlng_position, map);	// Der Pin der den aktuellen Standort des Nutzers anzeigt wird auf die Karte gesetzt
 			
         },
